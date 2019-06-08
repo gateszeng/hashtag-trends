@@ -66,6 +66,7 @@ Root
 |- analysis_frequency.py
 |- hashtag_text_relevance.py
 |- popular_tweets.py
+|- word_freq.py
 |- hashtag_trends_visualizations.ipynb
 ```
 

@@ -24,14 +24,11 @@ def get_freq_words_hastag(n = 30, filename = "Twitter-Get-Old-Tweets-Scraper/wed
         maxperctg: percentage of these words
     '''
 
-    #filename = "Twitter-Get-Old-Tweets-Scraper/tweets_gathered_wedding_#harryandmeghan.csv"
     word_dict = defaultdict(int)
     stop_words = set(stopwords.words('english'))
     punctuations = string.punctuation
-    #f = open('filename')
     tweet_ids = [] 
     lines = []
-    import csv
 
     with open(filename) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -51,17 +48,12 @@ def get_freq_words_hastag(n = 30, filename = "Twitter-Get-Old-Tweets-Scraper/wed
                 word_dict[s] += 1
         i+=1
 
-    #sorted(word_dict.items(), key=lambda word_dict : word_dict[1])
-    #print(word_dict)
-
     maxkey = sorted(word_dict, key=word_dict.get, reverse=True)[:n]
 
     maxvalues = [word_dict[s] for s in maxkey]
     result_dict={}
     for i in range(len(maxkey)):
-        #print("{:20}   {:10}    {:.2f}%".format(maxkey[i], maxvalues[i], 100*maxvalues[i]/len(lines)))
         result_dict[maxkey[i]] =maxvalues[i]/len(lines)
-    #maxperctg = 100*np.array(maxvalues)/len(lines)
     return result_dict
 
 def get_corr_df(directory, hashtags, n=30):

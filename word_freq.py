@@ -4,7 +4,6 @@ import os
 import string
 import numpy as np
 from collections import defaultdict
-
 from wordcloud import WordCloud, STOPWORDS
 from PIL import Image
 import urllib
@@ -35,14 +34,11 @@ def get_freq_words_topic(n = 30,directory = "Twitter-Get-Old-Tweets-Scraper/guns
         file_names.remove('mergedfile.csv')
     if '.DS_Store' in file_names:  
         file_names.remove('.DS_Store')
-    #filename = "Twitter-Get-Old-Tweets-Scraper/tweets_gathered_wedding_#harryandmeghan.csv"
     word_dict = defaultdict(int)
     stop_words = set(stopwords.words('english'))
     punctuations = string.punctuation
-    #f = open('filename')
     tweet_ids = [] 
     lines = []
-    import csv
     for filename in file_names:
         dirname = directory +'/'+filename
         with open(dirname) as csv_file:
@@ -72,17 +68,12 @@ def get_freq_words_topic(n = 30,directory = "Twitter-Get-Old-Tweets-Scraper/guns
                 word_dict[s] += 1
         i+=1
 
-    #sorted(word_dict.items(), key=lambda word_dict : word_dict[1])
-    #print(word_dict)
-
     maxkey = sorted(word_dict, key=word_dict.get, reverse=True)[:n]
 
     maxvalues = [word_dict[s] for s in maxkey]
     result_dict={}
     for i in range(len(maxkey)):
-        #print("{:20}   {:10}    {:.2f}%".format(maxkey[i], maxvalues[i], 100*maxvalues[i]/len(lines)))
         result_dict[maxkey[i]] =maxvalues[i]/len(lines)
-    #maxperctg = 100*np.array(maxvalues)/len(lines)
     return result_dict
 
 
@@ -103,14 +94,11 @@ def get_freq_words_hastag(n = 30, filename = "Twitter-Get-Old-Tweets-Scraper/wed
     assert isinstance(n, int)
     assert n > 0
     assert isinstance(filename, str)
-    #filename = "Twitter-Get-Old-Tweets-Scraper/tweets_gathered_wedding_#harryandmeghan.csv"
     word_dict = defaultdict(int)
     stop_words = set(stopwords.words('english'))
     punctuations = string.punctuation
-    #f = open('filename')
     tweet_ids = [] 
     lines = []
-    import csv
     
     with open(filename) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -136,7 +124,6 @@ def get_freq_words_hastag(n = 30, filename = "Twitter-Get-Old-Tweets-Scraper/wed
     result_dict=defaultdict(int)
     for i in range(len(maxkey)):
         result_dict[maxkey[i]] =maxvalues[i]/len(lines)
-    #maxperctg = 100*np.array(maxvalues)/len(lines)
     return result_dict
 
 
@@ -162,12 +149,6 @@ def draw_bars(directory, topic ,freq_words):
     assert isinstance(topic, str)
     assert isinstance(freq_words, list)
 
-
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from collections import defaultdict
-    import re
-    
     file_names = os.listdir(directory)
     if 'mergedfile.csv' in file_names:
         file_names.remove('mergedfile.csv')
@@ -235,7 +216,7 @@ def generate_wordcloud(hashtag, words, mask):
 
 def save_wordcloud(filename,mask):
     '''
-    creat a wordcloud given hashtag excel file
+    create a wordcloud given hashtag excel file
     Input:
         filename: 
         mask: cloud shape image in png fornat 
@@ -246,8 +227,6 @@ def save_wordcloud(filename,mask):
 
     '''
     assert isinstance(filename, str)
-    #assert isinstance(mask, np.array)
-
 
     hashtag = re.findall('/(\w+)--',filename)
     with open(filename) as csv_file:
