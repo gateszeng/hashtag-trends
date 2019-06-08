@@ -70,17 +70,19 @@ Root
 |  |  Industry_words.txt
 |
 - ECE_143_Final_Project_Group17.pdf
-- main.py
-- 
+- plot_frequency_graphs.py
+- analysis_frequency.py
+- Hashtag_text_relevance.py
+- Popular_tweets.py
+- hashtag_trends_visualizations.ipynb
 ```
 
-## Set Up Instructions
-
-### Required Packages
+## Required Packages
 1. numpy
 2. pandas
 3. matplotlib
 4. seaborn
 5. wordcloud
+6. nltk
 
 To install packages, type ```sudo pip3 install <packagename>``` on the command line.

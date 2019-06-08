@@ -3,7 +3,7 @@ import pandas as pd
 from matplotlib import pyplot
 import matplotlib as mpl
 
-def getFrequency(tag, dataset_name):
+def getFrequency(dataset_name):
     '''
     Reads in data from a filepath
     Args:

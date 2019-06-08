@@ -5,10 +5,11 @@ import matplotlib as mpl
 from analysis_frequency import *
 
 # Visualization of hashtag datasets
-def plotHashtags(hashtags, dates, target_hashtag, daterange=None):
+def plotHashtags(event_name, hashtags, dates, target_hashtag, daterange=None):
     '''
     Plots the frequency graph of all of the hashtags, highlighting the target_hashtag
     Args:
+        event_name: (str) name of major event
         hashtags: (list) the hashtag names listed on the dataset files
         dates: (list) the start/end dates listed on the dataset files
         target_hashtag: (str) the name of the hashtag that we want to highlight
@@ -16,7 +17,7 @@ def plotHashtags(hashtags, dates, target_hashtag, daterange=None):
     Returns:
         Matplotlib plot of the frequency of all of the hashtags
     '''
-    %matplotlib inline
+    #%matplotlib inline
     mpl.rcParams['figure.dpi'] = 150
     pyplot.rcParams['figure.figsize'] = (10, 5)
 
@@ -26,9 +27,8 @@ def plotHashtags(hashtags, dates, target_hashtag, daterange=None):
     freqs_dict = {}
 
     # generate list of filenames
-    filenames = [x+'--'+dates[0]+'--'+dates[1]+'.csv' for x in hashtags]
+    filenames = ['./'+event_name+'/'+x+'--'+dates[0]+'--'+dates[1]+'.csv' for x in hashtags]
     for tag, filename in zip(hashtags, filenames):
-        #freqs_dict[tag] = (getFrequency(filename)[1].loc[daterange[0]: daterange[1]])
         freqs_dict[tag] = normalizeFrequency(getFrequency(filename)[1].loc[daterange[0]: daterange[1]])
 
     # plot timeseries data
@@ -79,4 +79,4 @@ def plotSpecificEvent(event_name):
     plot_hashtag, plot_dates = event_dict[event_name]
     for t in plot_hashtag:
         print(t, flush=True)
-        plotHashtags(plot_hashtag, plot_dates, t)
+        plotHashtags(event_name, plot_hashtag, plot_dates, t)
