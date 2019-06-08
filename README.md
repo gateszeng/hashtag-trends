@@ -64,8 +64,8 @@ Root
 |- ECE_143_Final_Project_Group17.pdf
 |- plot_frequency_graphs.py
 |- analysis_frequency.py
-|- Hashtag_text_relevance.py
-|- Popular_tweets.py
+|- hashtag_text_relevance.py
+|- popular_tweets.py
 |- hashtag_trends_visualizations.ipynb
 ```
 
