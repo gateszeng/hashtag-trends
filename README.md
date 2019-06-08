@@ -60,21 +60,13 @@ Analysing the trends of popular hashtags surrounding major world events
 Root
 |
 +-datasets
-|  
 |
-+-scripts
-|  |  create_processed_data.py
-|  |  word_freq.py
-|  |  SQLite.py
-|  |  common_words.txt
-|  |  Industry_words.txt
-|
-- ECE_143_Final_Project_Group17.pdf
-- plot_frequency_graphs.py
-- analysis_frequency.py
-- Hashtag_text_relevance.py
-- Popular_tweets.py
-- hashtag_trends_visualizations.ipynb
+|- ECE_143_Final_Project_Group17.pdf
+|- plot_frequency_graphs.py
+|- analysis_frequency.py
+|- Hashtag_text_relevance.py
+|- Popular_tweets.py
+|- hashtag_trends_visualizations.ipynb
 ```
 
 ## Required Packages
@@ -84,5 +76,6 @@ Root
 4. seaborn
 5. wordcloud
 6. nltk
+7. bokeh
 
 To install packages, type ```sudo pip3 install <packagename>``` on the command line.
