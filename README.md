@@ -3,7 +3,7 @@
 ## Team Members
  - Gates Zeng (@gateszeng)
  - Wei-Cheng Huang (@tommyhuangtw)
- - Yayu Lin ()
+ - Yayu Lin (@yayul)
 
 ## Problem
 Analysing the trends of popular hashtags surrounding major world events
@@ -34,9 +34,27 @@ Analysing the trends of popular hashtags surrounding major world events
  * Worldcloud
 
 ## Dataset
-
+ * Tweets using top hashtags from five major events
+   * MeToo
+   * Falcon Heavy Launch
+   * Royal Wedding
+   * Camp Fire
+   * Parkland Shooting
+ * Information included
+   * Username 
+   * User handle
+   * Date
+   * Number of retweets
+   * Number of favorites
+   * Text
+   * Mentions
+   * Hashtags
+   * Tweet id
+   * Link
 ## Applications
-
+ * Offering insight into whether a trend would blow up or disappear quickly
+ * Designing suitable hashtags for attracting attention
+ * Evaluating public opinion on specific events 
 ## File Structure
 ```
 Root
